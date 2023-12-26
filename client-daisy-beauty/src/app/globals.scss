@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "KoHo Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("KoHo Regular"), url("/fonts/KoHo-Regular.woff") format("woff");
+}
+
+.font-text-header {
+  font-family: "KoHo Regular";
+  font-size: 65px;
+}
+
+:root {
+  --bg-main-color: #ffe5ec;
+  --bg-brand-color: #fc2a00;
+  --bg-footer-color: #ffffff;
+  --color-text: #2e1f1f;
+  --color-pink: #fc7899;
+  color-scheme: light only;
+  background-attachment: fixed;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--bg-main-color);
+  min-height: 100svh;
+}
+
+body {
+  color: var(--color-text);
+}
+
+p {
+  vertical-align: baseline;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none !important;
+}
+input {
+  appearance: none;
+}
+
+input,
+select,
+textarea {
+  background-color: #ffffff !important;
+}
+
+.height-full-offset {
+  max-height: -webkit-fill-available;
+}
+
+.text-color-defaut {
+  color: var(--color-text);
+}
+
+.text-brand {
+  color: var(--color-pink);
+}
+
+.daisy-background {
+  background-size: 100%;
+  &-b {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/DAISYA.png");
+    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
+  }
+  &-a {
+    width: 150px;
+    height: 150px;
+    background-image: url("/images/DAISYB.png");
+    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
+  }
+}
+
+.bg-service-more {
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/bg2.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.shadow-custom {
+  box-shadow: 5px 5px 15px #fddfe8, -5px -5px 15px #ffe5ec;
+}
+
+.btn-bg {
+  background: linear-gradient(98deg, #fb6f92 4.1%, #ffa6bc 105.84%);
+}
+
+.btn-bg-2 {
+  background: #ff8fab;
+}
+
+.btn-bg-3 {
+  background: linear-gradient(98deg, #ffa6bc 100%, #fb6f92 40%);
+}
+
+.bg-order-service {
+  background: linear-gradient(to top, #ffe5ec 10%, rgba(255, 229, 236, 0) 100%);
+}
+
+.text-limit {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
+}

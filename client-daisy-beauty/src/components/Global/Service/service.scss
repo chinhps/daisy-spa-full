@@ -1,0 +1,13 @@
+.service-group-background {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--urlServiceGroup);
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+  }
+}

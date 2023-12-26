@@ -1,0 +1,7 @@
+.button-custom {
+  color: #000000;
+  font-weight: bold;
+  width: fit-content;
+  min-width: 170px;
+  border-radius: 10px 0px;
+}
