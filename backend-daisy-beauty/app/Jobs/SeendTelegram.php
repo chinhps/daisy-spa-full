@@ -20,7 +20,8 @@ class SeendTelegram implements ShouldQueue
         protected string $id,
         protected string $name,
         protected string $phone,
-        protected string $date
+        protected string $date,
+        protected string $serviceName
     ) {
         //
     }
@@ -30,7 +31,7 @@ class SeendTelegram implements ShouldQueue
      */
     public function handle(): void
     {
-        $message = "<b>KHÁCH HÀNG: #{$this->id}</b>\n <b>Họ tên:</b> {$this->name}\n <b>SĐT:</b> <a href=\"tel:+{$this->phone}\">{$this->phone}</a>\n <b>Thời gian:</b> {$this->date}";
+        $message = "<b>KHÁCH HÀNG: #{$this->id}</b>\n <b>Họ tên:</b> {$this->name}\n <b>SĐT:</b> <a href=\"tel:+{$this->phone}\">{$this->phone}</a>\n <b>Thời gian:</b> {$this->date}\n <b>Dịch vụ:</b> {$this->serviceName}";
         reportTelegram($message);
     }
 }

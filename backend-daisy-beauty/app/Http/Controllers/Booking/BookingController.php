@@ -41,10 +41,11 @@ class BookingController extends Controller
                 $booking->id,
                 $validated['full_name'],
                 $validated['phone'],
-                $validated['date_booking']
+                $validated['date_booking'],
+                $booking->service->name
             );
 
-            return BaseResponse::custom(["msg" => "Thành công!", "key" => $key]);
+            return BaseResponse::custom(["msg" => "Thành công! {$booking->service->name}", "key" => $key]);
         } catch (\Exception $e) {
             DB::rollBack();
             return BaseResponse::custom(["msg" => "Thất bại!", 403]);
