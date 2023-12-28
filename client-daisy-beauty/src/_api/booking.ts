@@ -14,6 +14,9 @@ export const bookingAPI = {
         "Content-Type": "application/json",
       },
     });
+    if(!booking.ok) {
+      throw ("Lỗi");
+    }
     const res: ResponseBooking = await booking.json();
     return res;
   },

@@ -98,7 +98,7 @@ export default async function Footer() {
           ></iframe>
         </div>
       </footer>
-      <div className="p-3 bg-[var(--bg-footer-color)] z-20 pb-10">
+      <div className="p-3 bg-[var(--bg-footer-color)] z-20 pb-7">
         <p className="text-center text-sm">
           © {new Date().getFullYear()} DaisaySpa. All rights reserved. Designed
           and operated by

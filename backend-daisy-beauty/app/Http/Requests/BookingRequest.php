@@ -21,7 +21,7 @@ class BookingRequest extends BaseRequest
     {
         return [
             "date_booking" => "required|date_format:Y-m-d",
-            "full_name" => "required|string|min:8",
+            "full_name" => "required|string|min:3",
             "phone" => "required|string|regex:/^0\d{9}$/",
             "service_id" => "required|exists:services,id",
             "time_booking" => "required",

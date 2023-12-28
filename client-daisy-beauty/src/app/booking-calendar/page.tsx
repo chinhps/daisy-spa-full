@@ -33,7 +33,13 @@ const dataFormInfor: IFormInput[] = [
     name: "full_name",
     type: "INPUT",
     isRequired: true,
-    validate: { required: "Bạn cần điền họ tên" },
+    validate: {
+      required: "Bạn cần điền họ tên",
+      pattern: {
+        value: /^.{3,}$/,
+        message: "Bạn cần nhập ít nhất 3 ký tự cho tên!",
+      },
+    },
   },
   {
     label: "Số điện thoại",
@@ -73,8 +79,10 @@ export default function Booking() {
   const bookingMutate = useMutation({
     mutationFn: (data: object) => bookingAPI.create(data),
     onSuccess: (data) => {
-      toast.success(data.msg);
-      router.push(`/booking-calendar/complete?key=${data.key}`);
+      if (data.key) {
+        toast.success(data.msg);
+        router.push(`/booking-calendar/complete?key=${data.key}`);
+      }
     },
     onError: () => {
       toast.warning("Thông báo", {
@@ -101,6 +109,17 @@ export default function Booking() {
       .includes(filter.toLowerCase())
   );
 
+  useEffect(() => {
+    if (serviceQuery.data?.data) {
+      setDataService((prev) => {
+        return {
+          service_id: serviceQuery.data?.data.id,
+          ...prev,
+        };
+      });
+    }
+  }, [serviceQuery.data?.data]);
+
   return (
     <div className="container px-6 mx-auto z-10">
       <Breakcrums
@@ -123,9 +142,12 @@ export default function Booking() {
             Chọn loại dịch vụ
           </h3>
           <InputCustom
+            className="border border-gray-300"
             onChange={(e) => setFilter(e.target.value)}
+            onClick={(e) => (e.currentTarget.readOnly = false)}
             placeholder="Tìm kiếm dịch vụ"
             autoFocus={false}
+            readOnly={true}
           />
           <p className="py-4 text-sm text-gray-600">Danh sách dịch vụ</p>
           <div className="flex flex-col gap-4 h-[50vh] overflow-y-auto px-2">
@@ -138,12 +160,6 @@ export default function Booking() {
                       "/booking-calendar?service_slug=" + service.slug
                     );
                     modelRef.current?.close();
-                    setDataService((prev) => {
-                      return {
-                        service_id: service.id,
-                        ...prev,
-                      };
-                    });
                   }}
                 >
                   {service.category?.name}: {service.name}

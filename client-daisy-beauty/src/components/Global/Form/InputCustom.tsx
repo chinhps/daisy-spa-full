@@ -6,10 +6,11 @@ export interface IInputCustomProps
   label?: string;
   type?: "text" | "number" | "date";
   defaultValue?: string;
+  className?: string;
 }
 
 const InputCustom = forwardRef<HTMLInputElement, IInputCustomProps>(
-  function InputCustom({ required, label, type, ...rest }, ref) {
+  function InputCustom({ required, label, type, className, ...rest }, ref) {
     return (
       <div className="form-control w-full">
         {label && (
@@ -20,7 +21,9 @@ const InputCustom = forwardRef<HTMLInputElement, IInputCustomProps>(
         )}
 
         <input
-          className="input drop-shadow-sm w-full text-[0.8rem]"
+          className={`input drop-shadow-sm w-full text-[0.8rem] ${
+            className ? className : ""
+          }`}
           type={type ?? "text"}
           ref={ref}
           {...rest}
