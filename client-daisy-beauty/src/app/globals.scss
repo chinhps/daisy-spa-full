@@ -76,14 +76,14 @@ textarea {
   &-b {
     width: 200px;
     height: 200px;
-    background-image: url("/images/DAISYA.png");
-    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
+    background-image: url("/images/DAISYA-min.png");
+    // filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
   }
   &-a {
     width: 150px;
     height: 150px;
-    background-image: url("/images/DAISYB.png");
-    filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
+    background-image: url("/images/DAISYB-min.png");
+    // filter: grayscale(100%) sepia(100%) hue-rotate(300deg);
   }
 }
 
