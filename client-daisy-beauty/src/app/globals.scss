@@ -122,3 +122,14 @@ textarea {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* Số dòng tối đa muốn hiển thị */
 }
+
+.image-filter {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #febdcf;
+    opacity: 0.4;
+  }
+}

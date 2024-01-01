@@ -27,7 +27,7 @@ export default async function ServiceDetail({
           { name: "Chi tiết" },
         ]}
       />
-      <div className="relative rounded-2xl overflow-hidden h-[210px] shadow-3xl mt-3">
+      <div className="relative rounded-2xl overflow-hidden h-[210px] shadow-3xl mt-3 image-filter">
         {/* <div className="absolute top-2 left-2">
           <div className="flex gap-2 flex-col">
             <Tag text="-30%" />
@@ -58,7 +58,10 @@ export default async function ServiceDetail({
       </div>
       <h2 className="font-bold text-lg mb-3">Thông tin dịch vụ</h2>
       <DualButton serviceSlug={service.data.slug} />
-      <div className="text-[15px]">{service.data.description}</div>
+      <div
+        className="text-[15px]"
+        dangerouslySetInnerHTML={{ __html: service.data.description }}
+      ></div>
     </div>
   );
 }

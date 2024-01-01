@@ -34,7 +34,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides?.map((value, index) => (
             <div className="embla__slide" key={index}>
               <ServiceGroupItem
-                name={value.name}
+                name={"Dịch vụ " + value.name.toLowerCase()}
                 image={value.image}
                 link={"/services?category=" + value.slug}
               />

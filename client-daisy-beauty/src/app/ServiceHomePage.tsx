@@ -59,9 +59,9 @@ function Service2({
 }) {
   return (
     <section className="relative flex rounded-2xl overflow-hidden h-[135px] bg-white/50 shadow-custom ">
-      <div className="flex-3">
+      <div className="flex-3 image-filter rounded-br-3xl overflow-hidden">
         <Image
-          className="h-full w-full object-cover rounded-br-3xl"
+          className="h-full w-full object-cover"
           src={image}
           alt="service daisy"
           width="400"
@@ -69,8 +69,11 @@ function Service2({
         />
       </div>
       <div className="flex-1 flex flex-col gap-3 p-5">
-        <h2 className="leading-none font-bold line-clamp-1">{title}</h2>
-        <p className="text-xs line-clamp-3 text-gray-600">{description}</p>
+        <h2 className="leading-none font-bold line-clamp-2">{title}</h2>
+        <div
+          className="text-xs line-clamp-2 text-gray-600"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
       </div>
       <p className="absolute right-3 bottom-3 text-[10px] flex items-center gap-1 text-gray-800">
         Xem thêm

@@ -18,7 +18,7 @@ export default async function BlogDetailPage({
     return notFound();
   }
   return (
-    <div className="container px-5 mx-auto z-10">
+    <div className="container px-5 mx-auto z-10 mb-10">
       <Breakcrums
         data={[
           { name: "Trang chủ", linkTo: "/" },
@@ -32,7 +32,10 @@ export default async function BlogDetailPage({
       <p className="text-center text-sm my-3">
         Ngày: {formatDate(blog.data.created_at)}
       </p>
-      <div className="text-[15px]">{blog.data.content}</div>
+      <div
+        className="text-[15px]"
+        dangerouslySetInnerHTML={{ __html: blog.data.content }}
+      ></div>
       <ConnectWithOur />
     </div>
   );
