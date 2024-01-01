@@ -1,7 +1,6 @@
 "use client";
 
 import ServiceItem from "@/components/Global/Service/ServiceItem";
-import EmblaCarousel from "@/components/Global/Carousel/EmblaCarousel";
 import Breakcrums from "@/components/Global/Breakcrums/Breakcrums";
 import Link from "next/link";
 import { categoryApi } from "@/_api/category";
@@ -52,13 +51,13 @@ export default function ServiceListPage() {
           { name: "Danh sách dịch vụ", linkTo: "/services" },
         ]}
       />
-      <section className="sandbox__carousel mt-2">
+      {/* <section className="sandbox__carousel mt-2">
         <EmblaCarousel
           slides={categoriesQuery.data?.data.map((vl) => {
             return { name: vl.name, image: vl.image, slug: vl.slug };
           })}
         />
-      </section>
+      </section> */}
       <div className="flex items-center mb-2 mt-5 justify-between gap-5">
         <h1 className="text-xl font-bold whitespace-nowrap">
           {category
@@ -83,7 +82,7 @@ export default function ServiceListPage() {
               <Link href={"/services/" + service.slug} key={index}>
                 <ServiceItem
                   key={index}
-                  name={service.category?.name + ": " + service.name}
+                  name={service.name}
                   description={service.description}
                   image={service.image}
                 />

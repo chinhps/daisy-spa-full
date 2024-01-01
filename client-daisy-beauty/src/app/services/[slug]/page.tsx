@@ -43,7 +43,7 @@ export default async function ServiceDetail({
         />
       </div>
       <h1 className="font-bold my-5 text-xl leading-none">
-        {service.data.category?.name + ": " + service.data.name}
+        {service.data.name}
       </h1>
       <div className="flex items-center mb-4 gap-2">
         <p className="text-sm my-auto leading-none mt-[2px]">Đánh giá:</p>
