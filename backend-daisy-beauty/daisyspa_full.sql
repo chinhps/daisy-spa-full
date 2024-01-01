@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 01, 2024 at 01:52 PM
+-- Generation Time: Jan 01, 2024 at 04:43 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -87,7 +87,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`, `image`, `slug`) VALUES
 (1, 'Dưỡng da', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 'https://i.imgur.com/99SEDPX.jpg', 'dich-vu-duong-da'),
-(2, 'Trị liệu da', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 'https://i.imgur.com/99SEDPX.jpg', 'dich-vu-tri-lieu-da'),
+(2, 'Chăm sóc da', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 'https://i.imgur.com/99SEDPX.jpg', 'cham-soc-da'),
 (3, 'Triệt lông', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 'https://i.imgur.com/99SEDPX.jpg', 'dich-vu-triet-long');
 
 -- --------------------------------------------------------
@@ -268,9 +268,9 @@ INSERT INTO `services` (`id`, `name`, `description`, `created_at`, `updated_at`,
 (10, 'Lấy nhân mụn mũi', '<p>         Dịch vụ Lấy nhân mụn mũi là một phần quan trọng của chăm sóc da để giữ cho làn da của bạn sạch sẽ và tránh tình trạng mụn đen không mong muốn. Chúng tôi thực hiện quy trình này một cách kỹ lưỡng để đảm bảo làn da của bạn luôn mịn màng và không có tình trạng mụn đen khó chịu.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'lay-nhan-mun-mui', '/images/services/7.png'),
 (11, 'Thải độc tố da', '<p>         Dịch vụ Thải độc tố da giúp loại bỏ các chất độc hại và tác nhân gây hại từ môi trường khỏi làn da. Chúng tôi sử dụng các sản phẩm chăm sóc da chất lượng cao và kỹ thuật thải độc tố hiện đại để đảm bảo da bạn được làm mới và tái tạo, tràn đầy sức sống.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 1, 'thai-doc-to-da', '/images/services/8.png'),
 (12, 'Lấy nhân mụn cơ bản', '<p>         Dịch vụ Lấy nhân mụn cơ bản giúp giảm thiểu tình trạng mụn và đảm bảo sự sạch sẽ cho da của bạn. Chúng tôi áp dụng các kỹ thuật chuyên nghiệp để loại bỏ nhân mụn một cách hiệu quả, giúp da trở nên mịn màng và khỏe mạnh.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'lay-nhan-mun-co-ban', '/images/services/9.png'),
-(13, 'Trị mụn chuyên sâu', '<p>         Dịch vụ Trị mụn chuyên sâu là giải pháp đặc biệt dành cho những người có vấn đề về mụn nặng. Chúng tôi sử dụng các sản phẩm và phương pháp chăm sóc da chuyên sâu để kiểm soát tình trạng mụn và giúp da trở nên mềm mại và sáng bóng.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'tri-mun-chuyen-sau', '/images/services/10.png'),
+(13, 'Lấy nhân mụn chuyên sâu', '<p>         Dịch vụ nặn mụn chuyên sâu là giải pháp đặc biệt dành cho những người có vấn đề về mụn nặng. Chúng tôi sử dụng các sản phẩm và phương pháp chăm sóc da chuyên sâu để kiểm soát tình trạng mụn và giúp da trở nên mềm mại và sáng bóng.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'lay-nhan-mun-chuyen-sau', '/images/services/10.png'),
 (14, 'Lấy nhân mụn mủ, viêm', '<p>         Dịch vụ Lấy nhân mụn mủ, viêm là bước quan trọng trong việc xử lý mụn nặng và tình trạng da viêm. Chúng tôi thực hiện quy trình này một cách cẩn thận, đảm bảo an toàn và hiệu quả, để da bạn trở nên khỏe mạnh và không có tình trạng mụn viêm khó chịu.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'lay-nhan-mun-mu-viem', '/images/services/11.png'),
-(15, 'Điều trị da bằng dược mỹ phẩm', '<p>         Dịch vụ Điều trị da bằng dược mỹ phẩm là sự kết hợp của công nghệ tiên tiến và các sản phẩm dược mỹ phẩm chất lượng. Chúng tôi tùy chỉnh liệu pháp cho từng loại da cụ thể, giúp cải thiện vấn đề da và mang lại kết quả lâu dài.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'dieu-tri-da-bang-duoc-my-pham', '/images/services/12.png'),
+(15, 'Chăm sóc da bằng dược mỹ phẩm', '<p>         Chăm sóc da bằng dược mỹ phẩm là sự kết hợp của công nghệ tiên tiến và các sản phẩm dược mỹ phẩm chất lượng. Chúng tôi tùy chỉnh liệu pháp cho từng loại da cụ thể, giúp cải thiện vấn đề da và mang lại kết quả lâu dài.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 2, 'cham-soc-da-bang-duoc-my-pham', '/images/services/12.png'),
 (16, 'Làm đẹp da bằng Carboxyl CO2', '<p>         Dịch vụ Carboxyl CO2 làm đẹp da mang lại hiệu quả làm trắng, se lỗ chân lông và tái tạo tế bào da. Chúng tôi sử dụng công nghệ Carboxyl CO2 tiên tiến để kích thích sự sản xuất collagen, giúp da trở nên săn chắc và tràn đầy sức sống. Đặt lịch ngay hôm nay để trải nghiệm làn da mới mẻ và rạng ngời.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 1, 'dich-vu-carboxyl-co2-lam-dep-da', '/images/services/13.png'),
 (17, 'Dịch vụ Vi tảo chống lão hóa', '<p>         Dịch vụ Vi tảo chống lão hóa là hành trình chăm sóc da tận cùng với sức mạnh tự nhiên của vi tảo. Chúng tôi sử dụng công nghệ tiên tiến để truyền đạt những lợi ích tối đa từ vi tảo cho làn da của bạn. Vi tảo không chỉ giúp cung cấp dưỡng chất quan trọng mà còn kích thích tái tạo tế bào, giúp da trở nên săn chắc, đàn hồi và giảm thiểu dấu hiệu lão hóa.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 1, 'dich-vu-vi-tao-chong-lao-hoa', '/images/services/14.png'),
 (18, 'Dịch vụ Phi kim trẻ hóa da', '<p>         Dịch vụ Phi kim trẻ hóa da là một bước nhảy vọt trong thế giới chăm sóc da. Chúng tôi sử dụng kỹ thuật Phi kim để kích thích sản xuất collagen và elastin, giúp làn da trở nên căng tràn sức sống. Quy trình này không chỉ giảm nếp nhăn mà còn cải thiện độ đàn hồi, mang lại cho bạn làn da trẻ trung và rạng rỡ.     </p>', '2023-12-19 12:57:32', '2023-12-19 12:57:32', 1, 'dich-vu-phi-kim-tre-hoa-da', '/images/services/15.png'),
