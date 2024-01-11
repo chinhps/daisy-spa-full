@@ -37,7 +37,7 @@ export default function RootLayout({
           <div className="fixed daisy-background daisy-background-a top-0 right-0"></div>
           <div className="fixed daisy-background daisy-background-b bottom-0 left-0"></div>
         </div>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-X1R321DMMB" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11462352817" />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
