@@ -70,7 +70,9 @@ export default async function CompleteBooking({ searchParams }: any) {
       </div>
       <ConnectWithOur />
       <Script id="google-ads">
-        {"gtag('config', 'AW-11462352817');"}
+        {
+          "gtag('event', 'conversion', {'send_to': 'AW-11462352817/4DzQCJek2IQZELG_1tkq'}); "
+        }
       </Script>
     </div>
   );
