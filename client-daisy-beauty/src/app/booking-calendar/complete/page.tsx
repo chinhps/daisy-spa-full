@@ -4,6 +4,7 @@ import { formatDate, getInforByKey } from "@/_lib/function";
 import Breakcrums from "@/components/Global/Breakcrums/Breakcrums";
 import ConnectWithOur from "@/components/Global/ConnectWith/ConnectWithOur";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { FiExternalLink } from "react-icons/fi";
 
 async function getInforBooking(key: string) {
@@ -68,6 +69,9 @@ export default async function CompleteBooking({ searchParams }: any) {
         <p className="font-medium">Daisy Beauty.</p>
       </div>
       <ConnectWithOur />
+      <Script id="google-ads">
+        {"gtag('config', 'AW-11462352817');"}
+      </Script>
     </div>
   );
 }
