@@ -1,0 +1,28 @@
+services:
+  daisy-spa-backend:
+    image: chinhps/laravel-image:v8.2
+    container_name: daisy-spa-container
+    networks:
+      - daisy-spa-network
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 3001:80
+  mysql-daisy:
+    ports:
+      - 3305:3306
+    image: mysql:8.0
+    container_name: daisy-spa-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Chinh@12345
+    volumes:
+      - mysql-daisy-volume:/var/lib/mysql
+      - mysql-daisy-volume-config:/etc/mysql
+    networks:
+      - daisy-spa-network
+networks:
+  daisy-spa-network:
+    name: daisy-spa-network
+volumes:
+  mysql-daisy-volume:
+  mysql-daisy-volume-config:
