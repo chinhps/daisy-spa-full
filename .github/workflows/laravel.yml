@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-    - name: Set up SSH key 1
+    - name: Set up SSH key
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
@@ -24,4 +24,4 @@ jobs:
         ls ~/.ssh -la
     - name: Deloy code to server with SSH
       run: |
-        scp -i ~/.ssh/id_rsa -r ./backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/html
+        scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/html
