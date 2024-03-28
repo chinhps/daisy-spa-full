@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+    - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
     - name: Deloy code to server with SSH
       run: |
-        scp -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/api.daisyspa.vn
+        scp -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/api.daisyspa.vn
