@@ -16,6 +16,9 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
+    - name: Show folder
+      run: |
+        ls -la
     - name: Deloy code to server with SSH
       run: |
-        scp -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/api.daisyspa.vn
+        scp -i ~/.ssh/id_rsa -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@{{ secrets.SSH_HOST }}:/var/html
