@@ -1,0 +1,16 @@
+name: Deploy Project DaisySpa
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  laravel-deplow:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Deloy code to server with SSH
+      run: |
+        scp -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/api.daisyspa.vn
