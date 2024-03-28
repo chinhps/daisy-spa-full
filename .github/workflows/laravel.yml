@@ -19,6 +19,9 @@ jobs:
     - name: Show folder
       run: |
         ls -la
+    - name: Show SSH
+      run: |
+        cd .. && cd .ssh
     - name: Deloy code to server with SSH
       run: |
-        scp -i ~/.ssh/id_rsa -r /backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@{{ secrets.SSH_HOST }}:/var/html
+        scp -i ~/.ssh/id_rsa -r ./backend-daisy-beauty ${{ secrets.SSH_USERNAME }}@{{ secrets.SSH_HOST }}:/var/html
